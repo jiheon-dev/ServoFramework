@@ -171,4 +171,33 @@ public class Response {
         }
         cookieOptions.put(key, "; Expires=Sun, 06 Nov 1994 08:49:37 GMT");
     }
+
+    public void setResponseString(String val) {
+        responseString = val;
+    }
+
+    public void setHeader(String key, String val) {
+        headerOptions.put(key, val);
+    }
+
+    // TODO: OnError
+    public void setOnErrorListener(OnErrorListener listener) {
+        onErrorListener = listener;
+    }
+
+    /**
+     * On Error Listener
+     * If there is some error, this interface's {@link #onError(String, Socket)} will be called.
+     */
+
+    public interface OnErrorListener {
+        /**
+         * On Error
+         *
+         * @param msg error message
+         * @param socket error socket
+         */
+        void onError(String msg, Socket socket);
+    }
+
 }
