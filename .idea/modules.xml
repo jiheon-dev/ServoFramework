@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ServoFramework.iml" filepath="$PROJECT_DIR$/ServoFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServoLibrary/ServoLibrary.iml" filepath="$PROJECT_DIR$/ServoLibrary/ServoLibrary.iml" />
     </modules>
   </component>
 </project>
