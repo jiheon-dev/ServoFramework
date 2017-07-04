@@ -2,6 +2,7 @@ package org.servoframework.response;
 
 import org.servoframework.Preferences;
 import org.servoframework.Servo;
+import org.servoframework.library.Renderer;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -122,7 +123,7 @@ public class Response {
         String result = null;
         if(c != null) {
             try {
-                // TODO: Render
+                Renderer o = (Renderer)c.newInstance();
                 // check library type
                 if(o.getType().equals("view engine"))
                     result = o.render(path, params);
