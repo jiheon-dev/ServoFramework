@@ -1,5 +1,7 @@
 package org.servoframework.request;
 
+import org.servoframework.annotation.Route;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,6 +12,7 @@ public class Request {
     private String path;
     private String version;
 
+    private Route.RouteMethod method;
     private Map<String, String> headerOptions;
     private Map<String, String> requestParameters;
     private Map<String, String> queryParameters;
@@ -31,8 +34,8 @@ public class Request {
      *  @param method HTTP method
      */
 
-    public void setMethod(String method) {
-
+    public void setMethod(Route.RouteMethod method) {
+        this.method = method;
     }
 
     public void setPath(String path) {
@@ -51,5 +54,61 @@ public class Request {
         cookieParameters.put(key, value);
     }
 
+    public void setQuery(Map<String, String> parameters) {
+        for(String key :parameters.keySet()) {
+            queryParameters.put(key, parameters.get(key));
+        }
+    }
 
+    public void setParameters(Map<String, String> parameters) {
+        for(String key :parameters.keySet()) {
+            requestParameters.put(key, parameters.get(key));
+        }
+    }
+
+    public void setCookieParameters(Map<String, String> cookieParameters) {
+        for(String key :cookieParameters.keySet()) {
+            this.cookieParameters.put(key, cookieParameters.get(key));
+        }
+    }
+
+    public String getQuery(String key) {
+        if(queryParameters.containsKey(key)) {
+            return queryParameters.get(key);
+        } else {
+            return null;
+        }
+    }
+
+    public String get(String key) {
+        if(method == Route.RouteMethod.GET) {
+            return getQuery(key);
+        }
+
+        if(requestParameters.containsKey(key)) {
+            return requestParameters.get(key);
+        } else {
+            return null;
+        }
+    }
+
+    public String cookie(String key) {
+        return cookieParameters.get(key);
+    }
+
+    public String getHeader(String key) {
+        if(headerOptions.containsKey(key)) {
+            return headerOptions.get(key);
+        } else {
+            return null;
+        }
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public String getVersion() {
+        return version;
+    }
 }
