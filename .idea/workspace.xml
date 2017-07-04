@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd79eae1-546f-4f98-ba76-c7ef832d0954" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ServoLibrary/src/org/servoframework/LibrarySettings.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ServoLibrary/src/org/servoframework/Preferences.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ServoLibrary/src/org/servoframework/DocumentUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -43,8 +42,8 @@
       <file leaf-file-name="Response.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/servoframework/response/Response.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2835">
-              <caret line="189" column="63" lean-forward="false" selection-start-line="189" selection-start-column="56" selection-end-line="189" selection-end-column="63" />
+            <state relative-caret-position="360">
+              <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1092#1093#0" expanded="true" />
@@ -64,6 +63,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DocumentUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ServoLibrary/src/org/servoframework/DocumentUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LibrarySettings.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ServoLibrary/src/org/servoframework/LibrarySettings.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,10 +83,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Preferences.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Preferences.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ServoLibrary/src/org/servoframework/Preferences.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="81">
               <caret line="9" column="48" lean-forward="false" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -153,6 +162,7 @@
         <option value="$PROJECT_DIR$/src/org/servoframework/response/Response.java" />
         <option value="$PROJECT_DIR$/ServoLibrary/src/org/servoframework/LibrarySettings.java" />
         <option value="$PROJECT_DIR$/ServoLibrary/src/org/servoframework/Preferences.java" />
+        <option value="$PROJECT_DIR$/ServoLibrary/src/org/servoframework/DocumentUtil.java" />
       </list>
     </option>
   </component>
@@ -733,10 +743,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ServoLibrary/src/org/servoframework/LibrarySettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServoLibrary/src/org/servoframework/Preferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="9" column="48" lean-forward="false" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1019#1020#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/servoframework/response/Response.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2835">
-          <caret line="189" column="63" lean-forward="false" selection-start-line="189" selection-start-column="56" selection-end-line="189" selection-end-column="63" />
+        <state relative-caret-position="360">
+          <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1092#1093#0" expanded="true" />
@@ -755,27 +789,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ServoLibrary/src/org/servoframework/LibrarySettings.java">
+    <entry file="file://$PROJECT_DIR$/ServoLibrary/src/org/servoframework/DocumentUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="300">
+          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ServoLibrary/src/org/servoframework/Preferences.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="48" lean-forward="false" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
-            <element signature="e#980#981#0" expanded="true" />
-            <element signature="e#1019#1020#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
