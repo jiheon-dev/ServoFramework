@@ -25,6 +25,7 @@ public class Response {
     private String responseString = "OK";
     private Map<String, String> headerOptions = new HashMap<>();
     private Map<String, String> cookieOptions;
+    private OnErrorListener onErrorListener;
 
     public Response(Socket socket, DataOutputStream dos) {
         this.socket = socket;
@@ -56,8 +57,9 @@ public class Response {
             byte[] bytes = content.getBytes("UTF-8");
             dos.write(bytes, 0, bytes.length);
         } catch (IOException e) {
-            // TODO: On Error
-
+            if(onErrorListener != null) {
+                onErrorListener.onError("Output Stream Writing Error", socket);
+            }
             e.printStackTrace();
         } finally {
             try {
@@ -82,8 +84,9 @@ public class Response {
             }
             dos.writeBytes("\r\n");
         } catch (IOException e) {
-            // TODO: On Error
-
+            if(onErrorListener != null) {
+                onErrorListener.onError("Output Stream Writing Error", socket);
+            }
             e.printStackTrace();
         }
     }
@@ -94,8 +97,9 @@ public class Response {
             byte[] bytes = content.toString().getBytes("UTF-8");
             dos.write(bytes, 0, bytes.length);
         } catch (IOException e) {
-            // TODO: On Error
-
+            if(onErrorListener != null) {
+                onErrorListener.onError("Output Stream Writing Error", socket);
+            }
             e.printStackTrace();
         } finally {
             try {
