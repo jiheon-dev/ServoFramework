@@ -18,7 +18,7 @@ public class DocumentUtil {
      * @param path path in views path
      * @return file path. If this method returns null, the file doesn't exist.
      */
-    
+
     public static String getFilePath(String path) {
         Preferences p = Preferences.getInstance();
         String viewsPath = (String) p.get("view");
