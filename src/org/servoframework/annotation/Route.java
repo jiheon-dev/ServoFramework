@@ -10,7 +10,7 @@ import java.lang.annotation.*;
 @Target(ElementType.METHOD)
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Router {
+public @interface Route {
     enum RouteMethod {ALL, GET, POST, ETC}          // define METHOD
 
     String route();                                 // where is ROUTED PATH
