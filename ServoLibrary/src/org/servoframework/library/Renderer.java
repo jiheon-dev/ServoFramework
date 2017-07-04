@@ -1,7 +1,5 @@
 package org.servoframework.library;
 
-import org.servoframework.library.ServoLibrary;
-
 import java.util.Map;
 
 /**
