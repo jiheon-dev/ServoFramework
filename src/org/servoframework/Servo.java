@@ -36,7 +36,7 @@ public class Servo {
     }
 
     public boolean startServer() {
-        setPort();
+        setPort(port);
         try {
             serverSocket = new ServerSocket(port);
             Log.i(TAG, "Create Server Socket at port " + port);
