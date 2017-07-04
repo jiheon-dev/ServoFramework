@@ -1,5 +1,6 @@
 package org.servoframework.response;
 
+import org.servoframework.Preferences;
 import org.servoframework.Servo;
 
 import java.io.BufferedReader;
@@ -116,7 +117,6 @@ public class Response {
 
 
     public void render(String path, Map<String, ?> params) {
-        // TODO: Preferences
         Preferences preference = Preferences.getInstance();
         Class c = (Class)preference.get("view engine");
         String result = null;
@@ -127,11 +127,10 @@ public class Response {
                 if(o.getType().equals("view engine"))
                     result = o.render(path, params);
                 else
-
-                    // TODO: OnError
+                    onErrorListener.onError("Rendering engine Error", socket);
             } catch (IllegalAccessException|InstantiationException e) {
                 e.printStackTrace();
-                // TODO: On Error
+                onErrorListener.onError("Rendering Method Error", socket);
                 return;
             }
         } else {
@@ -139,7 +138,7 @@ public class Response {
         }
 
         if(result == null) {
-            // TODO: OnError
+            onErrorListener.onError("Rendering Result Problem", socket);
             return;
         }
 
@@ -184,7 +183,6 @@ public class Response {
         headerOptions.put(key, val);
     }
 
-    // TODO: OnError
     public void setOnErrorListener(OnErrorListener listener) {
         onErrorListener = listener;
     }
