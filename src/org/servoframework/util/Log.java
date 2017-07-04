@@ -1,4 +1,4 @@
-package util;
+package org.servoframework.util;
 
 /**
  * Created by unidev on 2017. 7. 4..
