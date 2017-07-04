@@ -46,7 +46,7 @@ public class Request {
     public void addHeader(String key, String value) {
         headerOptions.put(key, value);
     }
-    
+
     public void addCookie(String key, String value) {
         cookieParameters.put(key, value);
     }
