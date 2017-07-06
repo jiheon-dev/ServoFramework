@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ServoFramework.iml" filepath="$PROJECT_DIR$/ServoFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/ServoLibrary/ServoLibrary.iml" filepath="$PROJECT_DIR$/ServoLibrary/ServoLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServoTest/ServoTest.iml" filepath="$PROJECT_DIR$/ServoTest/ServoTest.iml" />
     </modules>
   </component>
 </project>

@@ -18,7 +18,7 @@ import java.util.List;
 
 public class Servo {
     public final static String VersionName = "0.0.1";
-    private int port = 80;
+    private int serverPort = 80;
     private ServerSocket serverSocket;
     private static final String TAG = "ServoFramework";
     private static final int VersionCode = 1;
@@ -35,11 +35,11 @@ public class Servo {
         preferences = Preferences.getInstance();
     }
 
-    public boolean startServer() {
+    public boolean startServer(int port) {
         setPort(port);
         try {
             serverSocket = new ServerSocket(port);
-            Log.i(TAG, "Create Server Socket at port " + port);
+            Log.i(TAG, "Create Server Socket at port " + serverPort);
             listenningThread.setServerSocket(serverSocket);
             listenningThread.start();
 
@@ -53,7 +53,7 @@ public class Servo {
 
     public void setPort(int port) {
         Log.i(TAG, "Set Port: " + port);
-        this.port = port;
+        this.serverPort = port;
     }
 
     public void stopServer() {
