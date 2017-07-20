@@ -5,6 +5,7 @@ import org.servoframework.Servo;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 
 /**
  * Created by unidev on 2017. 7. 4..
@@ -25,11 +26,12 @@ public class ListenningThread extends Thread {
         try {
             // listening
             while ((client = serverSocket.accept()) != null) {
-
                 // create accept thread
                 acceptThread = new AcceptThread(servo, client);
                 acceptThread.start();
             }
+        } catch (SocketException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
