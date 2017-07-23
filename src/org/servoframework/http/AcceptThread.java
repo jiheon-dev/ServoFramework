@@ -127,6 +127,8 @@ public class AcceptThread extends Thread {
             Map<String, Object> option = new HashMap<>();
             for(String type:LibrarySettings.typesBeforeInvoking) {
                 Class c = (Class) servo.get(type);
+                if (c == null)
+                    continue;
                 CommonLibrary commonLibrary = (CommonLibrary) c.newInstance();
                 if(type.equals(commonLibrary.getType())) {
                     switch(type) {
