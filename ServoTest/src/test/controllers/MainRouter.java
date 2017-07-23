@@ -11,6 +11,8 @@ import org.servoframework.response.Response;
 public class MainRouter {
     @Route(route="/", method = Route.RouteMethod.GET)
     public static void index(Request req, Response res) {
-        res.setResponseString("hello");
+        res.setHeader("Content-Type", "text/html");
+        res.write("Hello World");
+        res.end();
     }
 }
