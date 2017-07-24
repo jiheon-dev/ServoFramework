@@ -12,10 +12,12 @@ import test.models.User;
 public class MainHandler {
     public static void main(String [] args) throws InterruptedException {
         Servo servo = new Servo();
+        User user = new User();
 
         servo.addController(MainRouter.class);
         servo.addController(SubRouter.class);
-        User.init();
+
+        user.init();
         servo.startServer(7000);
     }
 }
