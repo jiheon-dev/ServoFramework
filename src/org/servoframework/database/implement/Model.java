@@ -1,4 +1,4 @@
-package test.models;
+package org.servoframework.database.implement;
 
 import org.servoframework.database.DBConnector;
 

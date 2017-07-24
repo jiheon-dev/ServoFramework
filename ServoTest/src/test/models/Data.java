@@ -1,7 +1,7 @@
 package test.models;
 
-import com.mongodb.client.MongoCollection;
 import org.servoframework.database.DBConnector;
+import org.servoframework.database.implement.Model;
 
 /**
  * Created by unidev on 2017. 7. 24..
