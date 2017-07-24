@@ -14,29 +14,30 @@ import test.models.User;
  */
 
 public class SubRouter {
+    private static User user = new User();
     @Route(route="/sub", method = Route.RouteMethod.GET)
     public static void index(Request req, Response res) {
         res.setHeader("Content-Type", "text/html");
-        User.init();
+        user.init();
 
         System.out.println(req.getQuery("name"));
-        String result = User.findUser(req.getQuery("name"));
+        String result = user.findUser(req.getQuery("name"));
 
         System.out.println(result);
 
         res.write(result);
-        User.close();
+        user.close();
         res.end();
     }
 
     @Route(route="/update", method = Route.RouteMethod.GET)
     public static void update(Request req, Response res) {
         res.setHeader("Content-Type", "text/html");
-        User.init();
+        user.init();
 
-        User.updateUser("name", "","");
+        user.updateUser("name", "","");
         res.write("success: true");
-        User.close();
+        user.close();
         res.end();
     }
 }
