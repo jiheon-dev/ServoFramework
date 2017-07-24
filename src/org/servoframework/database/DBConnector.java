@@ -37,12 +37,13 @@ public class DBConnector {
     }
 
     public String findQuery(String collection, Document docs) {
+        MongoCollection<Document> coll = null;
         try {
-            MongoCollection<Document> coll = database.getCollection(collection);
-            return coll.find(docs).toString();
+            coll = database.getCollection(collection);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return coll.find(docs).toString();
     }
 
     public void insertQuery(String collection, Document docs) {
