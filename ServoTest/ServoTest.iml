@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="ServoFramework" />
     <orderEntry type="library" name="bson-2.3" level="project" />
     <orderEntry type="library" name="mongo-java-driver" level="project" />
+    <orderEntry type="library" name="ServoFramework" level="project" />
   </component>
 </module>
