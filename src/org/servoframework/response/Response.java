@@ -3,7 +3,7 @@ package org.servoframework.response;
 import org.servoframework.Preferences;
 import org.servoframework.Servo;
 import org.servoframework.library.Renderer;
-import org.servoframework.middleware.DefaultRender;
+import org.servoframework.middleware.DefaultRenderer;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -136,7 +136,7 @@ public class Response {
                 return;
             }
         } else {
-            DefaultRender defaultRenderer = new DefaultRender();
+            DefaultRenderer defaultRenderer = new DefaultRenderer();
             result = defaultRenderer.render(path, params);
         }
 

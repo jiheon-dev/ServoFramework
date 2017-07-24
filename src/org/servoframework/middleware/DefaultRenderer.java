@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
  * Created by unidev on 2017. 7. 4..
  */
 
-public class DefaultRender implements Renderer {
+public class DefaultRenderer implements Renderer {
     private static final String TAG = "DefaultRenderer";
 
     @Override
