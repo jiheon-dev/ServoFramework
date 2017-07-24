@@ -6,6 +6,8 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
+import static com.mongodb.client.model.Filters.eq;
+
 /**
  * Created by unidev on 2017. 7. 24..
  */
@@ -74,10 +76,19 @@ public class DBConnector {
         }
     }
 
-    public void updateQuery(String collection, Document docs, Document changeDocs) {
+    public void updateQuery(String collection, String fieldName, Object value, Object newValue) {
         try {
             MongoCollection<Document> coll = database.getCollection(collection);
-            coll.updateOne(docs, changeDocs);
+            coll.updateOne(eq(fieldName, value), new Document("$set", new Document(fieldName, newValue)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateQuery(String collection, String fieldName, Object value, String newFieldName, Object newValue) {
+        try {
+            MongoCollection<Document> coll = database.getCollection(collection);
+            coll.updateOne(eq(fieldName, value), new Document("$set", new Document(newFieldName, newValue)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -86,5 +97,6 @@ public class DBConnector {
     public void close() {
         mongoClient.close();
     }
+
 
 }

@@ -14,13 +14,17 @@ public class User {
         connector.connect();
     }
 
-    public void insertUser(String name) {
+    public static void insertUser(String name) {
         connector.insertQuery("user", new Document("name", name));
     }
 
     public static String findUser(String name) {
         String result = connector.findQuery("user", new Document("name", name));
         return result;
+    }
+
+    public static void updateUser(String fieldName, Object value, Object newValue) {
+        connector.updateQuery("user", fieldName, value, newValue);
     }
 
     public static void close() {

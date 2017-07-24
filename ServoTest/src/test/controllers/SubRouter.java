@@ -1,5 +1,6 @@
 package test.controllers;
 
+import org.bson.Document;
 import org.servoframework.annotation.Route;
 import org.servoframework.database.DBConnector;
 import org.servoframework.http.SpecificRouting;
@@ -24,6 +25,17 @@ public class SubRouter {
         System.out.println(result);
 
         res.write(result);
+        User.close();
+        res.end();
+    }
+
+    @Route(route="/update", method = Route.RouteMethod.GET)
+    public static void update(Request req, Response res) {
+        res.setHeader("Content-Type", "text/html");
+        User.init();
+
+        User.updateUser("name", "","");
+        res.write("success: true");
         User.close();
         res.end();
     }
