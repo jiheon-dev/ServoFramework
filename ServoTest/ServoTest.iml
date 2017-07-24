@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ServoFramework" />
     <orderEntry type="library" name="bson-2.3" level="project" />
+    <orderEntry type="library" name="mongo-java-driver" level="project" />
   </component>
 </module>
