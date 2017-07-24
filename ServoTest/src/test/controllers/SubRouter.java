@@ -16,11 +16,10 @@ public class SubRouter {
     @Route(route="/sub", method = Route.RouteMethod.GET)
     public static void index(Request req, Response res) {
         res.setHeader("Content-Type", "text/html");
-        User user = new User();
-        user.init();
+        User.init();
 
         System.out.println(req.getQuery("name"));
-        String result = user.findUser(req.getQuery("name"));
+        String result = User.findUser(req.getQuery("name"));
 
         System.out.println(result);
 

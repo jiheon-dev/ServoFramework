@@ -18,7 +18,7 @@ public class User {
         connector.insertQuery("user", new Document("name", name));
     }
 
-    public String findUser(String name) {
+    public static String findUser(String name) {
         String result = connector.findQuery("user", new Document("name", name));
         return result;
     }
