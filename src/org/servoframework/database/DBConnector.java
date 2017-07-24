@@ -37,23 +37,39 @@ public class DBConnector {
     }
 
     public String findQuery(String collection, Document docs) {
-        MongoCollection<Document> coll = database.getCollection(collection);
-        return coll.find(docs).toString();
+        try {
+            MongoCollection<Document> coll = database.getCollection(collection);
+            return coll.find(docs).toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void insertQuery(String collection, Document docs) {
-        MongoCollection<Document> coll = database.getCollection(collection);
-        coll.insertOne(docs);
+        try {
+            MongoCollection<Document> coll = database.getCollection(collection);
+            coll.insertOne(docs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void deleteQuery(String collection, Document docs) {
-        MongoCollection<Document> coll = database.getCollection(collection);
-        coll.deleteOne(docs);
+        try {
+            MongoCollection<Document> coll = database.getCollection(collection);
+            coll.deleteOne(docs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void updateQuery(String collection, Document docs, Document changeDocs) {
-        MongoCollection<Document> coll = database.getCollection(collection);
-        coll.updateOne(docs, changeDocs);
+        try {
+            MongoCollection<Document> coll = database.getCollection(collection);
+            coll.updateOne(docs, changeDocs);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
