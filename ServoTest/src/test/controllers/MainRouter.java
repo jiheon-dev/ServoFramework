@@ -20,6 +20,7 @@ public class MainRouter {
     @Route(route="/home", method = Route.RouteMethod.GET)
     public static void home(Request req, Response res) {
         res.setHeader("Content-Type", "text/html");
+        res.cookie("key", "home");
         res.write("Hello Home");
         res.end();
     }
