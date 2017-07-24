@@ -32,9 +32,9 @@ public class DBConnector {
     MongoClient mongoClient = new MongoClient(host, port);
     MongoDatabase database = mongoClient.getDatabase(dbname);
 
-    public FindIterable<Document> findQuery(String collection, Document docs) {
+    public String findQuery(String collection, Document docs) {
         MongoCollection<Document> coll = database.getCollection(collection);
-        return coll.find(docs);
+        return coll.find(docs).toString();
     }
 
     public void insertQuery(String collection, Document docs) {
