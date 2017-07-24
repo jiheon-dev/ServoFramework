@@ -16,6 +16,8 @@ public class DBConnector {
     MongoClient mongoClient;
     MongoDatabase database;
 
+    public DBConnector() {}
+
     public DBConnector(String host, int port) {
         this.host = host;
         this.port = port;
@@ -37,13 +39,9 @@ public class DBConnector {
     }
 
     public String findQuery(String collection, Document docs) {
-        MongoCollection<Document> coll = null;
-        try {
-            coll = database.getCollection(collection);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return coll.find(docs).toString();
+        MongoCollection<Document> coll = database.getCollection(collection);
+        Document result = coll.find(docs).first();
+        return result.toJson();
     }
 
     public void insertQuery(String collection, Document docs) {
