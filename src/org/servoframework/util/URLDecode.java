@@ -7,7 +7,7 @@ import java.net.URLDecoder;
  * Created by unidev on 2017. 7. 24..
  */
 public class URLDecode {
-    public String getResult(String decodingString) {
+    public static String getResult(String decodingString) {
         String result = null;
         try {
             result = URLDecoder.decode(decodingString, "UTF-8");
