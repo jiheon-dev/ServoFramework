@@ -1,6 +1,7 @@
 package org.servoframework.request;
 
 import org.servoframework.annotation.Route;
+import org.servoframework.util.URLDecode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -74,7 +75,7 @@ public class Request {
 
     public String getQuery(String key) {
         if(queryParameters.containsKey(key)) {
-            return queryParameters.get(key);
+            return URLDecode.getResult(queryParameters.get(key));
         } else {
             return null;
         }

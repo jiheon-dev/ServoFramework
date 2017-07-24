@@ -20,7 +20,7 @@ public class SubRouter {
         user.init();
 
         System.out.println(req.getQuery("name"));
-        String result = user.findUser(URLDecode.getResult(req.getQuery("name")));
+        String result = user.findUser(req.getQuery("name"));
 
         System.out.println(result);
 
