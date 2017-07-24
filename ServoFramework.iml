@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ServoLibrary" />
+    <orderEntry type="library" name="mongodb-driver-3.4.2" level="project" />
   </component>
 </module>
