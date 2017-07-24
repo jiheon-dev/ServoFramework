@@ -7,9 +7,18 @@ import org.servoframework.database.DBConnector;
  * Created by unidev on 2017. 7. 24..
  */
 public class User {
+    private static DBConnector connector;
+
     public static void init() {
-        DBConnector connector = new DBConnector("test_db");
+        connector = new DBConnector("test_db");
         connector.connect();
-        connector.insertQuery("user", new Document("name", "Smaker"));
+    }
+
+    public static void insertUser(String name) {
+        connector.insertQuery("user", new Document("name", name));
+    }
+    public static String findUser(String name) {
+        String result = connector.findQuery("user", new Document("name", name));
+        return result;
     }
 }
