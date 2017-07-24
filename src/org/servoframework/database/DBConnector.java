@@ -13,6 +13,8 @@ public class DBConnector {
     private int port = 27017;
     private String host = "localhost";
     private String dbname = "test";
+    MongoClient mongoClient;
+    MongoDatabase database;
 
     public DBConnector(String host, int port) {
         this.host = host;
@@ -29,8 +31,10 @@ public class DBConnector {
         this.dbname = dbname;
     }
 
-    MongoClient mongoClient = new MongoClient(host, port);
-    MongoDatabase database = mongoClient.getDatabase(dbname);
+    public void connect() {
+        mongoClient = new MongoClient(host, port);
+        database = mongoClient.getDatabase(dbname);
+    }
 
     public String findQuery(String collection, Document docs) {
         MongoCollection<Document> coll = database.getCollection(collection);
