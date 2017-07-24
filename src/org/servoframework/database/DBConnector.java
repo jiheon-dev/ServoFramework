@@ -44,6 +44,18 @@ public class DBConnector {
         return result.toJson();
     }
 
+    public StringBuffer findAllQuery(String collection) {
+        MongoCollection<Document> coll = database.getCollection(collection);
+        StringBuffer sb = null;
+
+        sb.append("[");
+        for (Document cur : coll.find()) {
+            sb.append(cur.toJson());
+        }
+        sb.append("]");
+        return sb;
+    }
+
     public void insertQuery(String collection, Document docs) {
         try {
             MongoCollection<Document> coll = database.getCollection(collection);
@@ -69,6 +81,10 @@ public class DBConnector {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void close() {
+        mongoClient.close();
     }
 
 }
