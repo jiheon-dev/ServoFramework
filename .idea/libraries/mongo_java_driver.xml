@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mongo-java-driver">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ServoTest/lib/mongo-java-driver-3.4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
