@@ -40,4 +40,15 @@ public class SubRouter {
         user.close();
         res.end();
     }
+
+    @Route(route="/count", method = Route.RouteMethod.GET)
+    public static void count(Request req, Response res) {
+        res.setHeader("Content-Type", "text/html");
+        user.init();
+
+
+        res.write(String.valueOf(user.countUser()));
+        user.close();
+        res.end();
+    }
 }

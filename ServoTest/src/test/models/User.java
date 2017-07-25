@@ -9,6 +9,7 @@ import org.servoframework.database.implement.Model;
  */
 public class User implements Model {
     private static DBConnector connector;
+    private static String collection = "user";
 
     @Override
     public void init() {
@@ -17,19 +18,19 @@ public class User implements Model {
     }
 
     public void insertUser(String name) {
-        connector.insertQuery("user", new Document("name", name));
+        connector.insertQuery(collection, new Document("name", name));
     }
 
     public String findUser(String name) {
-        return connector.findQuery("user", new Document("name", name));
+        return connector.findQuery(collection, new Document("name", name));
     }
 
     public void updateUser(String fieldName, Object value, Object newValue) {
-        connector.updateQuery("user", fieldName, value, newValue);
+        connector.updateQuery(collection, fieldName, value, newValue);
     }
 
-    public int countUser(String collection) {
-        return connector.countQuery("user");
+    public int countUser() {
+        return connector.countQuery(collection);
     }
 
     @Override
