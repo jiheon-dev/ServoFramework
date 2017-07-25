@@ -21,12 +21,15 @@ public class User implements Model {
     }
 
     public String findUser(String name) {
-        String result = connector.findQuery("user", new Document("name", name));
-        return result;
+        return connector.findQuery("user", new Document("name", name));
     }
 
     public void updateUser(String fieldName, Object value, Object newValue) {
         connector.updateQuery("user", fieldName, value, newValue);
+    }
+
+    public int countUser(String collection) {
+        return connector.countQuery("user");
     }
 
     @Override
