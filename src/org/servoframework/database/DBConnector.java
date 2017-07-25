@@ -94,6 +94,34 @@ public class DBConnector {
         }
     }
 
+    public int countQuery(String collection) {
+        long count = -1;
+        int result = -1;
+
+        try {
+            MongoCollection<Document> coll = database.getCollection(collection);
+            count = coll.count();
+            result = Integer.parseInt(String.valueOf(count));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public int countQuery(String collection, Document docs) {
+        long count = -1;
+        int result = -1;
+
+        try {
+            MongoCollection<Document> coll = database.getCollection(collection);
+            count = coll.count(docs);
+            result = Integer.parseInt(String.valueOf(count));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     public void close() {
         mongoClient.close();
     }
