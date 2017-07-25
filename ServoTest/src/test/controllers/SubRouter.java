@@ -17,7 +17,7 @@ public class SubRouter {
     private static User user = new User();
     @Route(route="/sub", method = Route.RouteMethod.GET)
     public static void index(Request req, Response res) {
-        res.setHeader("Content-Type", "text/html");
+        res.setHeader("Content-Type", "text/html; charset=utf-8");
         user.init();
 
         System.out.println(req.getQuery("name"));
