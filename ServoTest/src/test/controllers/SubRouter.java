@@ -47,7 +47,7 @@ public class SubRouter {
         user.init();
 
 
-        res.write(String.valueOf(user.countUser()));
+        res.write(String.valueOf(user.count()));
         user.close();
         res.end();
     }

@@ -29,7 +29,7 @@ public class User implements Model {
         connector.updateQuery(collection, fieldName, value, newValue);
     }
 
-    public int countUser() {
+    public int count() {
         return connector.countQuery(collection);
     }
 

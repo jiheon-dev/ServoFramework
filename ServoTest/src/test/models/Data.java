@@ -15,6 +15,9 @@ public class Data implements Model {
     }
 
     @Override
+    public int count() { return connector.countQuery("data"); }
+
+    @Override
     public void close() {
         connector.close();
     }
