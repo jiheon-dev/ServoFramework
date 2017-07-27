@@ -7,5 +7,6 @@ import org.servoframework.database.DBConnector;
  */
 public interface Model {
     public void init();
+    public int count();
     public void close();
 }
