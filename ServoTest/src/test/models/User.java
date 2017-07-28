@@ -3,17 +3,17 @@ package test.models;
 import org.bson.Document;
 import org.servoframework.database.DBConnector;
 import org.servoframework.database.implement.Model;
+import test.config.Config;
 
 /**
  * Created by unidev on 2017. 7. 24..
  */
 public class User implements Model {
-    private static DBConnector connector;
-    private static String collection = "user";
+    private static DBConnector connector = new DBConnector(Config.DB_NAME);;
+    private static String collection = Config.collection[0];
 
     @Override
     public void init() {
-        connector = new DBConnector("test_db");
         connector.connect();
     }
 

@@ -2,12 +2,15 @@ package test.models;
 
 import org.servoframework.database.DBConnector;
 import org.servoframework.database.implement.Model;
+import test.config.Config;
 
 /**
  * Created by unidev on 2017. 7. 24..
  */
 public class Data implements Model {
-    DBConnector connector = new DBConnector("test_db");
+    private static DBConnector connector = new DBConnector(Config.DB_NAME);
+    private static String collection = Config.collection[1];
+
 
     @Override
     public void init() {
