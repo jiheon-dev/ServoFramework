@@ -1,5 +1,6 @@
 package test.controllers;
 
+import com.sun.jdi.ObjectCollectedException;
 import org.bson.Document;
 import org.servoframework.annotation.Route;
 import org.servoframework.database.DBConnector;
@@ -8,6 +9,8 @@ import org.servoframework.request.Request;
 import org.servoframework.response.Response;
 import org.servoframework.util.URLDecode;
 import test.models.User;
+
+import java.util.HashMap;
 
 /**
  * Created by unidev on 2017. 7. 4..
@@ -46,8 +49,11 @@ public class SubRouter {
         res.setHeader("Content-Type", "text/html");
         user.init();
 
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        map.put("success", true);
+        map.put("result", user.count());
+        res.json(map);
 
-        res.write(String.valueOf(user.count()));
         user.close();
         res.end();
     }

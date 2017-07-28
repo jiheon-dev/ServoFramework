@@ -29,6 +29,7 @@ public class User implements Model {
         connector.updateQuery(collection, fieldName, value, newValue);
     }
 
+    @Override
     public int count() {
         return connector.countQuery(collection);
     }
