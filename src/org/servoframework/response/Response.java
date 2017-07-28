@@ -188,12 +188,10 @@ public class Response {
         headerOptions.put(key, val);
     }
 
-    public String json(HashMap<String, Object> map) {
+    public void json(HashMap<String, Object> map) {
         if (content != null) {
             JSONObject obj = new JSONObject(map);
-            return obj.toJSONString();
-        } else {
-            return null;
+            content.append(obj.toJSONString());
         }
     }
 
