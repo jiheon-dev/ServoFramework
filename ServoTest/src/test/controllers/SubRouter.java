@@ -19,7 +19,7 @@ public class SubRouter {
         user.init();
 
         System.out.println(req.getParameter("name"));
-        String result = user.findUser(req.getParameter("name"));
+        String result = user.find(req.getParameter("name"));
 
         System.out.println(result);
 
@@ -33,7 +33,7 @@ public class SubRouter {
         res.setHeader("Content-Type", "text/html");
         user.init();
 
-        user.updateUser("name", "","");
+        user.update("name", "","");
         res.write("success: true");
         user.close();
         res.end();
