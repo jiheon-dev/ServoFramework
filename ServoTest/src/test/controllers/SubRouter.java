@@ -1,13 +1,8 @@
 package test.controllers;
 
-import com.sun.jdi.ObjectCollectedException;
-import org.bson.Document;
 import org.servoframework.annotation.Route;
-import org.servoframework.database.DBConnector;
-import org.servoframework.http.SpecificRouting;
 import org.servoframework.request.Request;
 import org.servoframework.response.Response;
-import org.servoframework.util.URLDecode;
 import test.models.User;
 
 import java.util.HashMap;
@@ -23,8 +18,8 @@ public class SubRouter {
         res.setHeader("Content-Type", "text/html; charset=utf-8");
         user.init();
 
-        System.out.println(req.getQuery("name"));
-        String result = user.findUser(req.getQuery("name"));
+        System.out.println(req.getParameter("name"));
+        String result = user.findUser(req.getParameter("name"));
 
         System.out.println(result);
 

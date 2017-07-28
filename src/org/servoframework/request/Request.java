@@ -81,7 +81,7 @@ public class Request {
         }
     }
 
-    public String get(String key) {
+    public String getParameter(String key) {
         if(method == Route.RouteMethod.GET) {
             return getQuery(key);
         }

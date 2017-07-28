@@ -24,8 +24,8 @@ public class MainRouter {
     public static void home(Request req, Response res) {
         res.setHeader("Content-Type", "application/x-www-form-urlencoded");
         res.cookie("key", "home");
-        res.write("Hello Home");
-        Log.i(TAG, req.getQuery("name"));
+        res.write(req.getParameter("name"));
+        Log.i(TAG, req.getParameter("name"));
         res.end();
     }
 }
