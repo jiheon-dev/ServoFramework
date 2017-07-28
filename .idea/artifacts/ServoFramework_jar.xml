@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="ServoFramework:jar">
+  <artifact type="jar" build-on-make="true" name="ServoFramework:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/ServoFramework_jar</output-path>
     <root id="archive" name="ServoFramework.jar">
       <element id="module-output" name="ServoFramework" />
