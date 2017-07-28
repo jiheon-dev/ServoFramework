@@ -2,6 +2,7 @@ package org.servoframework.response;
 
 import org.servoframework.Preferences;
 import org.servoframework.Servo;
+import org.servoframework.json.JSONObject;
 import org.servoframework.library.Renderer;
 import org.servoframework.middleware.DefaultRenderer;
 
@@ -13,6 +14,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 
 import java.net.Socket;
+import java.nio.Buffer;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,7 +35,7 @@ public class Response {
     public Response(Socket socket, DataOutputStream dos) {
         this.socket = socket;
         this.dos = dos;
-        headerOptions.put("Content-Type", "text/html");
+        headerOptions.put("Content-Type", "text/html; charset=utf-8");
         headerOptions.put("Server", "Servo/" + Servo.VersionName);
         headerOptions.put("Connection", "close");
     }
@@ -184,6 +186,15 @@ public class Response {
 
     public void setHeader(String key, String val) {
         headerOptions.put(key, val);
+    }
+
+    public String json(HashMap<String, Object> map) {
+        if (content != null) {
+            JSONObject obj = new JSONObject(map);
+            return obj.toJSONString();
+        } else {
+            return null;
+        }
     }
 
     public void setOnErrorListener(OnErrorListener listener) {
