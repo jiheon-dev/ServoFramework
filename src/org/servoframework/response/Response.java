@@ -189,10 +189,8 @@ public class Response {
     }
 
     public void json(HashMap<String, Object> map) {
-        if (content != null) {
-            JSONObject obj = new JSONObject(map);
-            content.append(obj.toJSONString());
-        }
+        JSONObject obj = new JSONObject(map);
+        content.append(obj.toJSONString());
     }
 
     public void setOnErrorListener(OnErrorListener listener) {
