@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ServoLibrary:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ServoLibrary_jar</output-path>
+    <root id="archive" name="ServoLibrary.jar">
+      <element id="module-output" name="ServoLibrary" />
+    </root>
+  </artifact>
+</component>
