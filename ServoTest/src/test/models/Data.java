@@ -38,7 +38,7 @@ public class Data implements Model {
     }
 
     @Override
-    public int count() { return connector.countQuery("data"); }
+    public int count() { return connector.countQuery(collection); }
 
     @Override
     public void close() {
