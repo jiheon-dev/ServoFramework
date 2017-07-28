@@ -15,6 +15,26 @@ public class Data implements Model {
     }
 
     @Override
+    public String find(String name) {
+        return null;
+    }
+
+    @Override
+    public void insert(String name) {
+
+    }
+
+    @Override
+    public void update(String fieldName, Object value, Object newValue) {
+
+    }
+
+    @Override
+    public void delete(String name) {
+
+    }
+
+    @Override
     public int count() { return connector.countQuery("data"); }
 
     @Override

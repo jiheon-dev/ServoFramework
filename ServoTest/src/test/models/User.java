@@ -17,16 +17,24 @@ public class User implements Model {
         connector.connect();
     }
 
-    public void insertUser(String name) {
+    @Override
+    public void insert(String name) {
         connector.insertQuery(collection, new Document("name", name));
     }
 
-    public String findUser(String name) {
+    @Override
+    public String find(String name) {
         return connector.findQuery(collection, new Document("name", name));
     }
 
-    public void updateUser(String fieldName, Object value, Object newValue) {
+    @Override
+    public void update(String fieldName, Object value, Object newValue) {
         connector.updateQuery(collection, fieldName, value, newValue);
+    }
+
+    @Override
+    public void delete(String name) {
+
     }
 
     @Override
