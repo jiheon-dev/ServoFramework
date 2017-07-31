@@ -87,7 +87,7 @@ public class Request {
         }
 
         if(requestParameters.containsKey(key)) {
-            return requestParameters.get(key);
+            return URLDecode.getResult(requestParameters.get(key));
         } else {
             return null;
         }
