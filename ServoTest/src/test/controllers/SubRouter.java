@@ -14,10 +14,13 @@ import java.util.HashMap;
 
 public class SubRouter {
     private static User user = new User();
+    private static Data data = new Data();
+
     @Route(route="/sub", method = Route.RouteMethod.GET)
     public static void index(Request req, Response res) {
         res.setHeader("Content-Type", "text/html; charset=utf-8");
         user.init();
+        data.init();
 
         System.out.println(req.getParameter("name"));
         String result = user.find(req.getParameter("name"));
@@ -25,6 +28,8 @@ public class SubRouter {
         System.out.println(result);
 
         res.write(result);
+
+        data.close();
         user.close();
         res.end();
     }

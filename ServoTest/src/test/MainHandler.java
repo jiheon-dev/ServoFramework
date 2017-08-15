@@ -3,6 +3,7 @@ package test;
 import org.servoframework.Servo;
 import test.controllers.MainRouter;
 import test.controllers.SubRouter;
+import test.models.Data;
 import test.models.User;
 import test.config.Config;
 
@@ -13,12 +14,10 @@ import test.config.Config;
 public class MainHandler {
     public static void main(String [] args) throws InterruptedException {
         Servo servo = new Servo();
-        User user = new User();
 
         servo.addController(MainRouter.class);
         servo.addController(SubRouter.class);
 
-        user.init();
         servo.startServer(Config.PORT);
     }
 }

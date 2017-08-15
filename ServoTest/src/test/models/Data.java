@@ -1,5 +1,6 @@
 package test.models;
 
+import org.bson.Document;
 import org.servoframework.database.DBConnector;
 import org.servoframework.database.implement.Model;
 import test.config.Config;
