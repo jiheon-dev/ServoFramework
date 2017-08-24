@@ -42,6 +42,7 @@ public class Response {
 
     public void write(String msg) {
         content.append(msg);
+        end();
     }
 
     public void send(String path) {
@@ -191,6 +192,7 @@ public class Response {
     public void json(HashMap<String, Object> map) {
         JSONObject obj = new JSONObject(map);
         content.append(obj.toJSONString());
+        end();
     }
 
     public void setOnErrorListener(OnErrorListener listener) {

@@ -20,16 +20,11 @@ public class SubRouter {
     public static void index(Request req, Response res) {
         res.setHeader("Content-Type", "text/html; charset=utf-8");
         user.init();
-        data.init();
 
-        System.out.println(req.getParameter("name"));
         String result = user.find(req.getParameter("name"));
-
-        System.out.println(result);
 
         res.write(result);
 
-        data.close();
         user.close();
         res.end();
     }
@@ -45,6 +40,7 @@ public class SubRouter {
         map.put("success", true);
         
         res.json(map);
+
         user.close();
         res.end();
     }
