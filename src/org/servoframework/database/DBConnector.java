@@ -52,11 +52,11 @@ public class DBConnector {
         MongoCollection<Document> coll = database.getCollection(collection);
 
         MongoCursor<Document> cursor = coll.find().iterator();
-        String result = null;
+        String result = "";
         try {
             while (cursor.hasNext()) {
                 result += cursor.next().toJson();
-                result += "\n";
+                result += ", ";
             }
         } finally {
             cursor.close();
