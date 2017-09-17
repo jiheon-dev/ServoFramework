@@ -1,8 +1,10 @@
 package org.servoframework.database;
 
+import com.mongodb.DBCursor;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
@@ -46,16 +48,21 @@ public class DBConnector {
         return result.toJson();
     }
 
-    public StringBuffer findAllQuery(String collection) {
+    public String findAllQuery(String collection) {
         MongoCollection<Document> coll = database.getCollection(collection);
-        StringBuffer sb = null;
 
-        sb.append("[");
-        for (Document cur : coll.find()) {
-            sb.append(cur.toJson());
+        MongoCursor<Document> cursor = coll.find().iterator();
+        String result = null;
+        try {
+            while (cursor.hasNext()) {
+                result += cursor.next().toJson();
+                result += "\n";
+            }
+        } finally {
+            cursor.close();
         }
-        sb.append("]");
-        return sb;
+
+        return result;
     }
 
     public void insertQuery(String collection, Document docs) {
