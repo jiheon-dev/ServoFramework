@@ -189,10 +189,10 @@ public class Response {
         headerOptions.put(key, val);
     }
 
-    public void json(HashMap<Object, Object> map) {
+    public void json(HashMap<String, Object> map) {
         JSONObject obj = new JSONObject(map);
         content.append(obj.toJSONString());
-//        end();
+        // end
     }
 
     public void setOnErrorListener(OnErrorListener listener) {
