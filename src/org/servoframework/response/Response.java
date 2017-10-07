@@ -195,6 +195,12 @@ public class Response {
 //        end();
     }
 
+    public void json(HashMap<Object, Object> map) {
+        JSONObject obj = new JSONObject(map);
+        content.append(obj.toJSONString());
+//        end();
+    }
+
     public void setOnErrorListener(OnErrorListener listener) {
         onErrorListener = listener;
     }

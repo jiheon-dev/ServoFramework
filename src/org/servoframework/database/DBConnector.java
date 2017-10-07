@@ -56,7 +56,6 @@ public class DBConnector {
         try {
             while (cursor.hasNext()) {
                 result += cursor.next().toJson();
-                result += ", ";
             }
         } finally {
             cursor.close();
